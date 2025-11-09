@@ -1,0 +1,197 @@
+/*para dar espacio <br/> para el footer*/
+.footer .social-icon {
+  margin-bottom: 20px;
+}
+
+/* para el contenedor del logo */
+.footer-logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.footer-time {
+  display: inline-flex;
+  gap: 1px;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+.time-box {
+  background: #000;
+  border: 1px solid #555;
+  color: #fff;
+  border-radius: 3px;
+  width: 20px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Aplica color solo a los minutos */
+.footer-time .minute-box {
+  color: #27ae60;
+}
+
+/* === FLIP CARDS (Minutos y Segundos) === */
+.flip-card {
+  position: relative;
+  width: 20px;
+  height: 28px;
+  perspective: 200px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background: #000;
+  color: #27ae60;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.flip-upper,
+.flip-lower {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-bottom: 1px solid #555;
+  backface-visibility: hidden;
+}
+
+.flip-upper {
+  top: 0;
+  transform-origin: bottom;
+}
+
+.flip-lower {
+  bottom: 0;
+  transform-origin: top;
+  border-top: 1px solid #555;
+}
+
+/* Animación real tipo hoja */
+.flip-card.flip .flip-upper {
+  animation: flipTop 0.7s ease-in-out forwards;
+}
+
+.flip-card.flip .flip-lower {
+  animation: flipBottom 0.7s ease-in-out forwards;
+}
+
+@keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+
+@keyframes flipBottom {
+  0% {
+    transform: rotateX(180deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/* === Fecha discreta debajo === */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-date,
+.footer-rights {
+  font-size: 0.85rem;
+  color: #999;
+  font-family: "Courier New", monospace;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/*para el hr la raya footer*/
+/*
+.footer-bottom-row {
+  margin-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 8px;
+}
+*/
+
+/* === RESPONSIVIDAD FOOTER === */
+@media (max-width: 768px) {
+  .footer-logo-container {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .footer-logo {
+    max-height: 160px;
+  }
+
+  .social-icon {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .footer-time {
+    justify-content: center;
+    margin: 10px auto;
+  }
+
+  .footer-date,
+  .footer-rights {
+    text-align: center;
+    font-size: 0.75rem;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  .footer-bottom-row {
+    border: none;
+    position: relative;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+
+  .footer-bottom-row::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right,
+        transparent,
+        rgba(255, 255, 255, 0.08),
+        transparent);
+  }
+
+  .time-box,
+  .flip-card {
+    width: 18px;
+    height: 25px;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,53 @@
+
+/*------------PARA LE CONTENEDOR DEL LA IMAGEN O GIF-------------*/
+
+/* IMAGEN GRANDE - OCUPAR TODO EL ESPACIO */
+.proj-imgbx {
+  width: 100% !important;
+  height: 300px !important; /* Altura fija */
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gif-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* EFECTO HOVER MÁS SUAVE */
+.proj-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, rgba(72, 32, 247, 0.7) -5.91%, rgba(0, 0, 0, 0.7) 111.58%);
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.proj-txtx {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.proj-imgbx:hover::before {
+  opacity: 1;
+}
+
+.proj-imgbx:hover .proj-txtx {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .project-content-wrapper {
+    flex-direction: column; /* Se apila verticalmente */
+  }
+  
+  .proj-imgbx {
+    height: 250px !important; /* Altura adecuada para móvil */
+  }
+}
