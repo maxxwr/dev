@@ -15,9 +15,13 @@ export const Contact = () => {
   };
 
   const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState('Enviar');
+  const [buttonText, setButtonText] = useState(["Enviar"]);
   const [status, setStatus] = useState({});
   const [formErrors, setFormErrors] = useState({});
+
+  const contactText = {
+    heading: ["Contactame"]
+  };
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
@@ -37,7 +41,7 @@ export const Contact = () => {
     if (!formDetails.telefono) {
       errors.telefono = "El teléfono es obligatorio.";
     } else if (!/^\d{9}$/.test(formDetails.telefono)) {
-      errors.telefono = "El teléfono debe tener 9 dígitos.";
+      errors.telefono = `Tu teléfono tiene ${formDetails.telefono.length} dígitos. Necesita exactamente 9 sin espacios.`;
     }
     if (!formDetails.mensaje) errors.mensaje = "El mensaje es obligatorio.";
 
@@ -51,7 +55,8 @@ export const Contact = () => {
       setStatus({ succes: false, mensaje: "¡Oops! Por favor, completa todos los campos correctamente. 😅" });
       return;
     }
-    setButtonText("Enviando...");
+    setButtonText(["Enviando..."]);
+
     emailjs
       .send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -77,7 +82,7 @@ export const Contact = () => {
         }
       )
       .finally(() => {
-        setButtonText("Enviar");
+        setButtonText(["Enviar"]);
       });
   };
 
@@ -96,7 +101,7 @@ export const Contact = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>Contactame</h2>
+                  <h2>{contactText.heading.join(" ")}</h2>
                   <form onSubmit={handleSubmit}>
                     <Row>
                       <Col size={12} sm={6} md={6} className="px-1">
@@ -135,7 +140,7 @@ export const Contact = () => {
                         ></textarea>
                         {formErrors.mensaje && <p className="error">{formErrors.mensaje}</p>}
                         <button type="submit">
-                          <span>{buttonText}</span>
+                          <span>{buttonText.join(" ")}</span>
                         </button>
                       </Col>
                       {status.mensaje && (

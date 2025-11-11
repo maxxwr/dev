@@ -36,7 +36,7 @@
 
 /* Aplica color solo a los minutos */
 .footer-time .minute-box {
-  color: #27ae60;
+  color: red;
 }
 
 /* === FLIP CARDS (Minutos y Segundos) === */
@@ -48,7 +48,7 @@
   border: 1px solid #555;
   border-radius: 3px;
   background: #000;
-  color: #27ae60;
+  color: red;
   font-family: "Courier New", monospace;
   font-weight: 600;
   font-size: 1rem;

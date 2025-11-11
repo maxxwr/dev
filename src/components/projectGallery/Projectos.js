@@ -382,7 +382,7 @@ export const Projects = () => {
         type: "personal",
         name: "max winchez",
         content: "Ingeniero de Software especializado en backend, frontend e inteligencia artificial.",
-        details: ["Cuento con experiencia en el desarrollo de sistemas completos, implementando autenticaciones seguras, analisis de datos, aprendizaje profundo y MySQL.", "Enfocado en crear sistemas inteligentes que transformen datos en soluciones efectivas."]
+        details: ["Cuento con experiencia en el desarrollo de sistemas completos, implementando autenticaciones seguras, analisis de datos y aprendizaje profundo DL/ML.", "Enfocado en crear sistemas inteligentes que transformen datos en soluciones efectivas."]
       },
       {
         type: "education",

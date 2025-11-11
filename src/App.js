@@ -12,7 +12,7 @@ import { Footer } from "./components/footerHub/Footer";
 import { BottomNav } from "./components/navPanel/BottomNav";
 import { FondoTrueno } from "./components/fxHub/trueno";
 
-function App() {
+export const App = () => {
   useEffect(() => {
     console.log(`%c
        _____
@@ -52,6 +52,4 @@ function App() {
       </div>
     </Router>
   );
-}
-
-export default App;
+};

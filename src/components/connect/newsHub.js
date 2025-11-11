@@ -9,6 +9,13 @@ export const NewsHub = () => {
   const [status, setStatus] = useState(null);
   const [message, setMessage] = useState('');
 
+  const newsHubText = {
+    heading: [
+      "¡Conecta conmigo!",
+      "Recibe actualizaciones o contáctame directamente"
+    ]
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -29,6 +36,7 @@ export const NewsHub = () => {
     if (telefono) data.telefono = telefono;
 
     if (email || telefono) {
+      setStatus('sending');
       emailjs
         .send(
           process.env.REACT_APP_EMAILJS_SERVICE_ID_NEWSHUB,
@@ -40,7 +48,7 @@ export const NewsHub = () => {
           (response) => {
             if (email && telefono) {
               setStatus('success');
-              setMessage(`¡Tu correo y número de celular se enviaron con éxito! 😊`);
+              setMessage(`¡Tu correo y tu número de celular se enviaron con éxito! 😊`);
             } else if (email) {
               setStatus('success');
               setMessage(`¡Tu correo electrónico se envió con éxito! 😊`);
@@ -64,16 +72,24 @@ export const NewsHub = () => {
     }
   };
 
+  const statusText = {
+    sending: ["Enviando..."]
+  };
+
+  const buttonText = {
+    submit: ["Enviar"],
+  };
+
   return (
     <Col lg={12}>
       <div className="newshub-bx wow slideInUp">
         <Row>
           <Col lg={12} md={6} xl={5}>
             <h3>
-              ¡Conecta conmigo!<br />
-              Recibe actualizaciones o contáctame directamente
+              {newsHubText.heading[0]}<br />
+              {newsHubText.heading[1]}
             </h3>
-            {status === 'sending' && <Alert>Enviando...</Alert>}
+            {status === 'sending' && <Alert>{statusText.sending.join(" ")}</Alert>}
             {status === 'error' && <Alert variant="danger">{message}</Alert>}
             {status === 'success' && <Alert variant="success">{message}</Alert>}
           </Col>
@@ -92,7 +108,7 @@ export const NewsHub = () => {
                   onChange={(e) => setTelefono(e.target.value)}
                   placeholder="Tu celular"
                 />
-                <button type="submit">Enviar</button>
+                <button type="submit">{buttonText.submit.join(" ")}</button>
               </div>
             </form>
           </Col>

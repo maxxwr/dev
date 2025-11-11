@@ -38,6 +38,12 @@ export const Banner = () => {
     title: "Hola, soy Max Winchez",
     description: "Desarrollo backend, frontend e integración de soluciones con DL & ML.",
     phrase: "Transformando ideas en realidad",
+    downloadTexts: {
+      default: "Descargar CV",
+      completed: "Descarga Completada",
+    },
+    socialText: "Follow Me",
+    certificatesText: "Ver Logros",
   };
 
   const tick = useCallback(() => {
@@ -136,7 +142,7 @@ export const Banner = () => {
               <button
                 className="vvd btn-contact"
                 onClick={() =>
-                  handleDownloadClick("https://drive.google.com/uc?export=download&id=1y0K9-PaHigcoIV8ZdliIJUKoeFaAEnUR")
+                  handleDownloadClick("https://drive.google.com/uc?export=download&id=1Xab_e2jyyZNUWWjUfvEOHVzK-hY6xbfr")
                 }
               >
                 {isDownloading ? (
@@ -147,11 +153,11 @@ export const Banner = () => {
                 ) : downloadComplete ? (
                   <>
                     <FaCheckCircle style={{ marginRight: "10px", color: "green" }} />
-                    <span>Descarga Completada</span>
+                    <span>{infoPersonal.downloadTexts.completed}</span>
                   </>
                 ) : (
                   <>
-                    <FaFileDownload style={{ marginRight: "10px" }} /> Descargar CV
+                    <FaFileDownload style={{ marginRight: "10px" }} /> {infoPersonal.downloadTexts.default}
                   </>
                 )}
               </button>
@@ -173,7 +179,7 @@ export const Banner = () => {
       </Container>
 
       <div className="social-links">
-        <div className="follow-text">Follow Me</div>
+        <div className="follow-text">{infoPersonal.socialText}</div>
         <div className="social-icons">
           {redesSociales.map((red, index) => (
             <a key={index} href={red.href} target="_blank" rel="noreferrer" className="social-icon" aria-label={red.alt}>
@@ -184,7 +190,7 @@ export const Banner = () => {
 
         <div className="social-icon">
           <Button variant="link" onClick={() => setShowCertificates(true)} className="btn-logros">
-            Ver Logros
+            {infoPersonal.certificatesText}
           </Button>
         </div>
       </div>

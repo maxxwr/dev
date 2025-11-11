@@ -12,6 +12,14 @@ export const CertificatesModal = ({ show, onHide }) => {
   const [downloadComplete, setDownloadComplete] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  const modalText = {
+    close: ["Cerrar"],
+    download: ["Descargar"],
+    downloadComplete: ["Descarga Completada"],
+    next: ["Siguiente"],
+    prev: ["Anterior"],
+  };
+
   const certificados = [
     { imgUrl: projImg2, link: "https://drive.google.com/uc?export=download&id=1hHLLjzBGhpmZz75Yw71SzAXpZ1k4Qaj_" },
     { imgUrl: projImg4, link: "https://drive.google.com/uc?export=download&id=15mZpyr-wWbWIg1-webTs11uVMQUAod1X" },
@@ -47,7 +55,7 @@ export const CertificatesModal = ({ show, onHide }) => {
     <Modal show={show} onHide={onHide} size="lg" centered className="certificates-modal">
       <Modal.Header>
         <Button variant="danger" onClick={onHide} className="close-button">
-          Cerrar
+          {modalText.close.join(" ")}
         </Button>
       </Modal.Header>
 
@@ -77,11 +85,11 @@ export const CertificatesModal = ({ show, onHide }) => {
               ) : downloadComplete ? (
                 <>
                   <FaCheckCircle style={{ marginRight: "10px", color: "green" }} />
-                  <span>Descarga Completada</span>
+                  <span>{modalText.downloadComplete.join(" ")}</span>
                 </>
               ) : (
                 <>
-                  <FaFileDownload style={{ marginRight: "10px" }} /> Descargar
+                  <FaFileDownload style={{ marginRight: "10px" }} /> {modalText.download.join(" ")}
                 </>
               )}
             </button>
@@ -92,7 +100,7 @@ export const CertificatesModal = ({ show, onHide }) => {
       <Modal.Footer>
         <div className="pagination-controls">
           <Button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 0} className="pagination-button prev">
-            Anterior
+            {modalText.prev.join(" ")}
           </Button>
 
           {[...Array(maxPage + 1)].map((_, index) => (
@@ -106,7 +114,7 @@ export const CertificatesModal = ({ show, onHide }) => {
           ))}
 
           <Button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === maxPage} className="pagination-button next">
-            Siguiente
+            {modalText.next.join(" ")}
           </Button>
         </div>
       </Modal.Footer>

@@ -49,19 +49,24 @@ export const Footer = () => {
   }, [hora]);
 
   const horaSplit = hora.split(":");
-  const horaActual = parseInt(horaSplit[0], 10); 
+  const horaActual = parseInt(horaSplit[0], 10);
   const minutos = horaSplit[1];
   const segundos = horaSplit[2] ? horaSplit[2].substring(0, 2) : "";
   const horaFormateada = horaActual < 10 ? `${horaActual}` : `${horaActual}`;
   const ampm = new Date()
     .toLocaleTimeString("en-US", { hour12: true })
-    .slice(-2); 
+    .slice(-2);
 
   const redesSociales = [
     { href: "https://www.linkedin.com/in/max-winchez-rivera-3719a4237/", src: navIcon1, alt: "LinkedIn" },
     { href: "https://github.com/", src: navIcon3, alt: "GitHub" },
     { href: "https://www.facebook.com/profile.php?id=100094055649759", src: navIcon2, alt: "Facebook" },
   ];
+
+  const footerText = {
+    rights: ["©", new Date().getFullYear(), "Max", "|", "Lima, Perú.", "Todos los derechos reservados."],
+    date: [fecha]
+  };
 
   return (
     <footer className="footer">
@@ -99,7 +104,7 @@ export const Footer = () => {
                   <div className="flip-lower">{char}</div>
                 </div>
               ))}
-              
+
               {ampm.split("").map((char, i) => (
                 <div key={`ampm-${i}`} className="time-box">{char}</div>
               ))}
@@ -112,9 +117,7 @@ export const Footer = () => {
             <p className="footer-date">{fecha}</p>
           </Col>
           <Col sm={6} className="text-center text-sm-end">
-            <p className="footer-rights">
-              © {new Date().getFullYear()} Max | Lima, Perú. Todos los derechos reservados.
-            </p>
+            <p className="footer-rights">{footerText.rights.join(" ")}</p>
           </Col>
         </Row>
       </Container>
