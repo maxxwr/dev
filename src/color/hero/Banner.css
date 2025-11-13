@@ -426,41 +426,219 @@
 
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
-/* ESTILOS GENERAL PARA EL BOTON VER LOGROS***************/
+/* ESTILOS GENERAL PARA EL BOTON VER LOGROS ***************/
 .logros {
   padding: 20px 0;
   background-color: transparent;
 }
 
-/* Estilo de la ventana modal */
-.certificates-modal .modal-content {
-  background: white; 
-  backdrop-filter: blur(10px); 
-  border-radius: 10px;
-  max-width: 90%;  
-  top: 21px; 
+/* Estilo del botón "Ver Logros" */
+.btn-logros {
+  display: block;
+  margin: 20px auto;
+  font-size: 10px;
+  color: #aaaaaa;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  height: 120px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Estilos para las tarjetas de los certificados */
+/* Efecto de deslizamiento automático de ARRIBA a ABAJO */
+.btn-logros::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    transparent, 
+    rgba(0, 255, 255, 0.4),
+    rgba(255, 0, 255, 0.4),
+    rgba(255, 255, 0, 0.4),
+    transparent);
+  animation: slideFuturist 3s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+@keyframes slideFuturist {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+/* Efecto al pasar el mouse */
+.btn-logros:hover {
+  background-color: transparent;
+  color: #aaaaaa;
+  border-color: #fff;
+}
+
+/* MODAL FUTURISTA MUY ANCHO ***************/
+.certificates-modal .modal-content {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  border: 1px solid rgba(161, 12, 12, 0.1);
+  max-width: 97%;
+  /* MÁS ANCHO EN DESKTOP */
+  margin: 20px auto;
+  box-shadow:
+    0 0 50px rgba(0, 255, 255, 0.3),
+    0 0 100px rgba(138, 43, 226, 0.2),
+    inset 0 0 50px rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  top: 21px;
+}
+
+.certificates-modal .modal-content>div {
+  border: 1px solid rgba(80, 80, 80, 0.5) !important;
+}
+
+/* Efecto de borde neón futurista */
+.certificates-modal .modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ff00);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  animation: borderGlow 3s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* HEADER DEL MODAL FUTURISTA */
+.modal-header {
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  position: relative;
+}
+
+.modal-title {
+  color: #00ffff;
+  font-family: 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  letter-spacing: 2px;
+}
+
+/* Botón cerrar futurista */
+.modal-header .close-button {
+  font-size: 1.2rem;
+  color: #00ffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.modal-header .close-button:hover {
+  background: rgba(255, 0, 0, 0.3);
+  border-color: #ff0000;
+  color: #ff0000;
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+/* TARJETAS DE CERTIFICADOS FUTURISTAS CON TAMAÑOS GRANDES */
 .certificado-card {
   text-align: center;
-  margin-bottom: -12px;  /*ahyy ess para levatar el contendir del modal*/ 
-  /* margin-bottom: -10px;*/ /*<-- o eso tambien sirve para levantar el model el contenedor*/
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: -3rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.certificado-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.certificado-card:hover::before {
+  left: 100%;
 }
 
 .certificado-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 15px 40px rgba(0, 255, 255, 0.4),
+    0 0 60px rgba(138, 43, 226, 0.3);
+  border-color: rgba(0, 255, 255, 0.6);
 }
 
 .certificado-img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.certificado-card:hover .certificado-img {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
 }
 
 /* Elimina el texto debajo de la imagen */
@@ -468,82 +646,153 @@
   display: none;
 }
 
-/*  estilo para el boton cerrarr */
-.modal-header .close-button {
-  font-size: 1rem;
-  color: #fff;
-  background-color: red;
-  border: none;
-  border-radius: 0%; 
-  padding: 5px 10px; 
-  position: relative;
-  z-index: 1050;
-  transition: all 0.3s ease; 
-}
-
-.modal-header .close-button:hover {
-  background-color: #d32f2f; 
-  transform: scale(1.1); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-}
-
-.modal-header .close-button:active {
-  transform: scale(0.98); 
-}
-
-
-/* Estilo del botón "Ver Logros" */
-.btn-logros {
-  display: block;
-  margin: 20px auto;  
-  font-size: 10px;
-  color: #aaaaaa;  
-  background-color: transparent;  
-  border: 1px solid #fff;  
-  border-radius: 0px;  
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  text-align: center; 
-  font-weight: bold;  
-  text-transform: uppercase; 
-  writing-mode: vertical-rl; 
-  height: 120px; 
-  width: 40px; 
+/* PAGINACIÓN FUTURISTA MEJORADA */
+.pagination-controls {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
+  margin-top: 25px;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0 15px;
 }
 
-/* Efecto al pasar el mouse */
-.btn-logros:hover {
-  background-color: transparent; 
-  color: #aaaaaa; 
-  border-color: #fff; 
+.pagination-controls .pagination-button {
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: #00ffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  font-weight: 300;
+  letter-spacing: 1px;
+  min-width: 80px;
+  text-align: center;
 }
 
+.pagination-controls .pagination-button:hover:not(:disabled) {
+  background: rgba(0, 255, 255, 0.2);
+  color: #ffffff;
+  border-color: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
 
-/* Estilo para el Modal en Dispositivos Móviles */
+.pagination-controls .pagination-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pagination-controls .page-number {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.pagination-controls .page-number:hover {
+  background: rgba(0, 255, 255, 0.2);
+  border-color: #00ffff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.pagination-controls .page-number.active {
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  color: #000000;
+  border-color: transparent;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+/* RESPONSIVE DESIGN - MODAL MUY ANCHO Y PAGINACIÓN MEJORADA */
 @media (max-width: 767px) {
   .certificates-modal .modal-content {
-    background: white;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    max-width: 100%;  
-    top: 0.5px; /* <-ahy es para subir mas el contendor del modal en cel*/
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    max-width: 99.5%;
+    /* CASI TODO EL ANCHO DE LA PANTALLA */
+    top: 0.5px;
+    margin: 2px auto;
+    /* MARGEN MUY PEQUEÑO */
+    width: 99%;
+    left: 0.5%;
+    right: 0.5%;
+  }
+
+  .modal-header {
+    padding: 12px 15px;
+  }
+
+  .modal-title {
+    font-size: 1.1rem;
   }
 
   .certificado-card {
-    max-width: 100%; 
-    margin: 12px auto; /* <-ese espara agrandar el modeal en cel*/
+    max-width: 100%;
+    margin: 12px auto;
+    padding: 0px;
   }
 
   .certificado-img {
-    width: 100%; 
-    height: auto; 
-    object-fit: contain; 
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 70vh;
+    /* MUY GRANDE EN MÓVIL */
   }
 
+  /* PAGINACIÓN MEJORADA PARA MÓVIL */
+  .pagination-controls {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 5px;
+    padding: 10px 5px;
+    margin-top: 20px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pagination-controls .pagination-button {
+    padding: 10px 15px;
+    font-size: 12px;
+    min-width: 70px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .pagination-controls .page-number {
+    padding: 8px 12px;
+    font-size: 12px;
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+  }
+
+  /* Asegurar que los botones estén siempre visibles y bien distribuidos */
+  .pagination-controls .pagination-button:first-child {
+    margin-right: auto;
+  }
+
+  .pagination-controls .pagination-button:last-child {
+    margin-left: auto;
+  }
+
+  /* Botón Ver Logros en móvil (MANTENIDO) */
   .btn-logros {
     font-size: 10px;
     height: 100px;
@@ -551,13 +800,57 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .certificado-img {
-    width: 100%; 
-    height: auto;
-    object-fit: contain; 
+@media (max-width: 480px) {
+  .certificates-modal .modal-content {
+    max-width: 99.8%;
+    /* CASI SIN MARGEN EN PANTALLAS MUY PEQUEÑAS */
+    margin: 1px auto;
+    left: 0.1%;
+    right: 0.1%;
   }
 
+  .pagination-controls {
+    gap: 3px;
+    padding: 8px 3px;
+  }
+
+  .pagination-controls .pagination-button {
+    padding: 8px 12px;
+    font-size: 11px;
+    min-width: 65px;
+  }
+
+  .pagination-controls .page-number {
+    padding: 6px 10px;
+    font-size: 11px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .certificado-img {
+    max-height: 65vh;
+    /* AJUSTE PARA PANTALLAS MUY PEQUEÑAS */
+  }
+}
+
+@media (max-width: 1024px) {
+  .certificates-modal .modal-content {
+    max-width: 98%;
+    /* MÁS ANCHO EN TABLETS TAMBIÉN */
+  }
+
+  .certificates-modal .modal-content::before {
+    padding: 1px; /* DELGADO PARA TABLET Y MÓVIL -> ES DEL BORDER DEL MODAL */
+  }
+
+  .certificado-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 600px;
+  }
+
+  /* Botón Ver Logros en tablet (MANTENIDO) */
   .btn-logros {
     font-size: 12px;
     height: 120px;
@@ -565,130 +858,82 @@
   }
 }
 
-/*-----------------------------------------------------------------------------------------------------*/
-/* Contenedor paraa la paginación  */
-.pagination-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  gap: 10px; 
+/* Efectos de partículas futuristas */
+.modal-content::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: float 20s linear infinite;
+  pointer-events: none;
+  opacity: 0.3;
 }
 
-/* esstilo para los botones de "Anterior" y "Siguiente" */
-.pagination-controls .pagination-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 30px;
-  border: 2px solid #ccc;
-  background-color: transparent;
-  color: #333;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Efecto cuando pasa el mouse sobre los botones */
-.pagination-controls .pagination-button:hover {
-  background-color: #333; 
-  color: #fff; 
-}
-
-/* Efecto para deshabilitar el botón */
-.pagination-controls .pagination-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* Estilo para los números de página */
-.pagination-controls .page-number {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  background-color: #4CAF50; 
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-  height: 40px;
-  width: 40px; 
- 
-}
-
-/* Efecto cuando pasa el mouse sobre los números de página */
-.pagination-controls .page-number:hover {
-  background-color: #333; 
-  color: #fff; 
-}
-
-.pagination-controls .page-number.active {
-  background-color: transparent; 
-  color: #333; 
-  border: 1px solid black;
-}
-
-@media (max-width: 767px) {
-  .pagination-controls {
-    flex-wrap: nowrap; /* se asegura que los botones estén en una sola línea */
-    overflow-x: auto; /* y sii hay más botones, permite hacer scroll horizontal */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
   }
 
-  .pagination-controls .pagination-button,
-  .pagination-controls .page-number {
-    margin-bottom: 10px;  
-    width: auto;  
-    padding: 8px 12px; /* <---ajusta en el tamaño de los botones */
-    font-size: 10px; /* <---reduce el tamaño de la fuente */
-  }
-
-  .pagination-controls .page-number.active {
-    background-color: #4CAF50; 
-    color: #fff;
+  100% {
+    transform: translate(-50px, -50px) rotate(360deg);
   }
 }
+
 /*--------------------------------------------------------*/
 
 /* estilo para descargar el botonn descargar cv" */
 .btn-descargar {
-  position: relative; /*es nesesario para k fucniiona con el botn */
-  top: -40px; /*para subir el botn asia arrriba */
+  position: relative;  /*es nesesario para k fucniiona con el botn */
+  top: -2px; /*para subir el botn asia arrriba */
   padding: 10px 20px;
   font-size: 10px;
-  color: #333; 
-  background-color: transparent; 
-  border: 2px solid #333; 
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid transparent;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
   text-align: center;
-  margin-top: 0px; 
+  margin-top: 0px;
   display: flex;
-  align-items: center; 
+  align-items: center;
+  /* BORDE CON GRADIENTE Y BORDER-RADIUS */
+  background:
+    linear-gradient(#333, #333) padding-box,
+    linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ff00) border-box;
 }
 
 .btn-descargar:hover {
-  background-color: #333;  
-  color: #fff;  
+  background:
+    linear-gradient(transparent, transparent) padding-box,
+    linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ff00) border-box;
+  color: #333;
 }
 
 @media (max-width: 767px) {
   .btn-descargar {
-    font-size: 9px;  /* para reducir el tamaño del texto en móviles */
-    padding: 8px 15px;  /* para reducir el padding en móviles */
+    font-size: 9px;
+    /* para reducir el tamaño del texto en móviles */
+    padding: 8px 15px;
+    /* para reducir el padding en móviles */
+    top: -3rem;
   }
 }
 
 /* para eliminar la línea azul del enlace */
 a {
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 /* para edliminar el borde azul cuando se hace clic o hover sobre el enlace */
 a:focus,
 a:hover {
-  outline: none; 
-  box-shadow: none; /* para eliminar la sombra en el enlace */
+  outline: none;
+  box-shadow: none;
+  /* para eliminar la sombra en el enlace */
 }
-
-
-
 
