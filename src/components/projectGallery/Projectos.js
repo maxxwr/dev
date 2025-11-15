@@ -181,7 +181,7 @@ export const Projects = () => {
       description: [
         "Conexión a base de datos",
         "Autenticación JWT para manejo de sesiones",
-        "Integración con Stripe.",
+        "Integración con Stripe",
         "Validación de datos en frontend y backend"
       ],
       githubLink: "#"
@@ -192,10 +192,10 @@ export const Projects = () => {
       imgUrl: projImg5,
       technologies: ["PHP", "MySQL", "HTML", "CSS3", "JavaScript"],
       description: [
-        "CRUD completo para control de datos.",
-        "Autenticación con sesiones seguras.",
-        "Interfaz adaptable con navegación lateral.",
-        "Validaciones integradas para registro e ingreso de usuarios."
+        "CRUD completo para control de datos",
+        "Autenticación con sesiones seguras",
+        "Interfaz adaptable con navegación lateral",
+        "Control seguro en registro y login"
       ],
       githubLink: "#"
     },
@@ -205,10 +205,10 @@ export const Projects = () => {
       imgUrl: projImg6,
       technologies: ["PHP", "MySQL", "HTML", "CSS3", "JavaScript"],
       description: [
-        "Módulo CRUD funcional para control de registros",
+        "Módulo CRUD para manipulación de registros",
         "Autenticación de usuarios",
         "Pedidos conectados a base de datos",
-        "Interfaz dinámica con validaciones de formulario"
+        "Interfaz con validación integrada"
       ],
       githubLink: "#"
     }
@@ -307,12 +307,11 @@ export const Projects = () => {
       description: [
         "Permite registrar, editar y eliminar datos",
         "Conexión base de datos",
-        "Interfaz adaptable y ligera para dispositivos móviles.",
-        "Generada como APK desde Visual Studio 2022."
+        "UI ligera y adaptable en móviles",
+        "Generada como APK desde Visual Studio 2022"
       ],
       githubLink: "#"
     }
-
   ];
 
   const aiProjects = [
@@ -354,7 +353,7 @@ export const Projects = () => {
       technologies: ["Python", "Scikit-learn", "NumPy", "TensorFlow"],
       description: [
         "Entrenamiento de modelos supervisados en dataset estructurado.",
-        "Comparación de métricas entre enfoques de IA tradicionales y redes neuronales.",
+        "Métricas clásicos vs redes neuronales.",
         "Evaluación con matrices de confusión y precisión.",
       ],
       githubLink: "#",
@@ -369,7 +368,7 @@ export const Projects = () => {
       description: [
         "Preprocesamiento de texto con técnicas de NLP.",
         "Entrenamiento del modelo en dataset de reseñas.",
-        "Visualización de resultados de sentimiento en interfaz web.",
+        "Visualización web del output de NLP.",
       ],
       githubLink: "#",
     },

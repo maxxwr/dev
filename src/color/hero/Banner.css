@@ -27,6 +27,7 @@
 .icon {
   margin-right: 2px;
 }
+
 /* ********************/
 
 .text-container {
@@ -85,7 +86,8 @@
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 50px;
   box-shadow: 0 4px 15px rgba(68, 36, 211, 0.527);
-  animation: breathingEffect 3s infinite ease-in-out, typingEffect 3s steps(30, end) 1; /*<- ahy para breathingEffect 0s en cero es para detener la respiracion del contenedor*/
+  animation: breathingEffect 3s infinite ease-in-out, typingEffect 3s steps(30, end) 1;
+  /*<- ahy para breathingEffect 0s en cero es para detener la respiracion del contenedor*/
   overflow: hidden;
   max-width: 100%;
   box-sizing: border-box;
@@ -100,17 +102,21 @@
   white-space: nowrap;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   overflow: hidden;
-  width: 0; 
+  width: 0;
   animation: typingEffect 3s steps(30, end) forwards, breathingEffect 0s infinite ease-in-out;
 }
 
 /* animación de respiración */
 @keyframes breathingEffect {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
-    transform: scale(1.00); /*<- ahy es para animarlo x ejmplo scale(1.05)*/
+    transform: scale(1.00);
+    /*<- ahy es para animarlo x ejmplo scale(1.05)*/
   }
 }
 
@@ -119,6 +125,7 @@
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
@@ -148,6 +155,7 @@
     margin: 5px auto;
   }
 }
+
 /**************************************************************/
 
 .social-links {
@@ -294,7 +302,7 @@
 /* Tablet para dispositivos grandes (escritorio) */
 @media (max-width: 768px) {
   .profile-img-wrapper {
-    width: 85%;  
+    width: 85%;
     height: 330px;
   }
 
@@ -315,7 +323,8 @@
   }
 
   .social-icons {
-    gap: 0px; /* <- redes sociales verticales apegadas */
+    gap: 0px;
+    /* <- redes sociales verticales apegadas */
   }
 }
 
@@ -323,11 +332,12 @@
 /* Móviles */
 @media (max-width: 480px) {
   .profile-img-wrapper {
-    width: 100%;  
+    width: 100%;
     height: 330px;
-    margin-top: 5px; /* <- reducion de contenedor de gif */
+    margin-top: 5px;
+    /* <- reducion de contenedor de gif */
   }
-  
+
   .projects-info {
     font-size: 1.8rem;
   }
@@ -346,7 +356,8 @@
 
   .social-links {
     right: 20px;
-    gap: 8px; /* <- reducion de contenedor para redes social vertical */
+    gap: 8px;
+    /* <- reducion de contenedor para redes social vertical */
   }
 
   .social-icon {
@@ -360,7 +371,8 @@
 .profile-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* el gif ocupe todo el contenedor */
+  object-fit: cover;
+  /* el gif ocupe todo el contenedor */
   filter: grayscale(100%);
   transition: filter 0.5s ease;
 }
@@ -369,7 +381,7 @@
 @media (min-width: 768px) {
   .profile-img {
     width: 100%;
-    height: auto; 
+    height: auto;
   }
 }
 
@@ -377,18 +389,18 @@
 @media (max-width: 480px) {
   .profile-img {
     width: 100%;
-    height: auto; 
+    height: auto;
   }
 }
 
 /*---------------------------------------------------------------------*/
 /* essstilo para el botón en el perfil */
 .btn-contact {
-  position: relative; 
-  top: 10px; 
-  padding: 8px 20px; 
-  font-size: 10px; 
-  font-weight: 300; 
+  position: relative;
+  top: 10px;
+  padding: 8px 20px;
+  font-size: 10px;
+  font-weight: 300;
   color: #aaaaaa;
   background-color: transparent;
   border: 2px solid #464545;
@@ -396,11 +408,11 @@
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   text-align: center;
-  display: block; 
-  width: auto; 
-  margin-left: auto; 
-  margin-right: auto; 
-  margin-top: 10px; 
+  display: block;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
 }
 
 /* Estilo cuando el botón está en hover */
@@ -418,9 +430,9 @@
 @media (max-width: 767px) {
   .btn-contact {
     font-size: 10px;
-    padding: 8px 15px; 
-    width: auto; 
-    margin-top: 10px; 
+    padding: 8px 15px;
+    width: auto;
+    margin-top: 10px;
   }
 }
 
@@ -465,12 +477,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, 
-    transparent, 
-    rgba(0, 255, 255, 0.4),
-    rgba(255, 0, 255, 0.4),
-    rgba(255, 255, 0, 0.4),
-    transparent);
+  background: linear-gradient(180deg,
+      transparent,
+      rgba(0, 255, 255, 0.4),
+      rgba(255, 0, 255, 0.4),
+      rgba(255, 255, 0, 0.4),
+      transparent);
   animation: slideFuturist 3s ease-in-out infinite;
   filter: blur(1px);
 }
@@ -480,14 +492,17 @@
     top: -100%;
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     top: 100%;
     opacity: 0;
   }
 }
+
 /* Efecto al pasar el mouse */
 .btn-logros:hover {
   background-color: transparent;
@@ -718,17 +733,22 @@
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
 }
 
-/* RESPONSIVE DESIGN - MODAL MUY ANCHO Y PAGINACIÓN MEJORADA */
+/* ======= MÓVIL ( 767px) PARA K NO SE AGA LAG EL MODAL EN CELULARES======= */
 @media (max-width: 767px) {
+  .certificates-modal {
+    backdrop-filter: none !important;
+    /* <-ES X ESO PARA K NO SE AGA LAG */
+    -webkit-backdrop-filter: none !important;
+  }
+
   .certificates-modal .modal-content {
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-    backdrop-filter: blur(20px);
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     border-radius: 15px;
     max-width: 99.5%;
-    /* CASI TODO EL ANCHO DE LA PANTALLA */
     top: 0.5px;
     margin: 2px auto;
-    /* MARGEN MUY PEQUEÑO */
     width: 99%;
     left: 0.5%;
     right: 0.5%;
@@ -742,10 +762,13 @@
     font-size: 1.1rem;
   }
 
+  /* TARJETAS SIN BLUR */
   .certificado-card {
     max-width: 100%;
     margin: 12px auto;
     padding: 0px;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 
   .certificado-img {
@@ -753,10 +776,9 @@
     height: auto;
     object-fit: contain;
     max-height: 70vh;
-    /* MUY GRANDE EN MÓVIL */
   }
 
-  /* PAGINACIÓN MEJORADA PARA MÓVIL */
+  /* PAGINACIÓN — NO SE TOCA EL BLUR AQUÍ */
   .pagination-controls {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -783,7 +805,6 @@
     flex-shrink: 0;
   }
 
-  /* Asegurar que los botones estén siempre visibles y bien distribuidos */
   .pagination-controls .pagination-button:first-child {
     margin-right: auto;
   }
@@ -792,7 +813,7 @@
     margin-left: auto;
   }
 
-  /* Botón Ver Logros en móvil (MANTENIDO) */
+  /* BOTÓN LATERAL - LOGROS */
   .btn-logros {
     font-size: 10px;
     height: 100px;
@@ -800,13 +821,16 @@
   }
 }
 
+/* ======= MÓVIL MUY PEQUEÑO (≤ 480px) ======= */
 @media (max-width: 480px) {
+
   .certificates-modal .modal-content {
     max-width: 99.8%;
-    /* CASI SIN MARGEN EN PANTALLAS MUY PEQUEÑAS */
     margin: 1px auto;
     left: 0.1%;
     right: 0.1%;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 
   .pagination-controls {
@@ -829,18 +853,19 @@
 
   .certificado-img {
     max-height: 65vh;
-    /* AJUSTE PARA PANTALLAS MUY PEQUEÑAS */
   }
 }
 
+/* ======= TABLET (≤ 1024px) ======= */
 @media (max-width: 1024px) {
+
   .certificates-modal .modal-content {
     max-width: 98%;
-    /* MÁS ANCHO EN TABLETS TAMBIÉN */
   }
 
   .certificates-modal .modal-content::before {
-    padding: 1px; /* DELGADO PARA TABLET Y MÓVIL -> ES DEL BORDER DEL MODAL */
+    padding: 1px;
+    /* borde fino */
   }
 
   .certificado-img {
@@ -850,7 +875,6 @@
     max-height: 600px;
   }
 
-  /* Botón Ver Logros en tablet (MANTENIDO) */
   .btn-logros {
     font-size: 12px;
     height: 120px;
@@ -887,8 +911,10 @@
 
 /* estilo para descargar el botonn descargar cv" */
 .btn-descargar {
-  position: relative;  /*es nesesario para k fucniiona con el botn */
-  top: -2px; /*para subir el botn asia arrriba */
+  position: relative;
+  /*es nesesario para k fucniiona con el botn */
+  top: -2px;
+  /*para subir el botn asia arrriba */
   padding: 10px 20px;
   font-size: 10px;
   color: #fff;
@@ -936,4 +962,3 @@ a:hover {
   box-shadow: none;
   /* para eliminar la sombra en el enlace */
 }
-
