@@ -119,7 +119,7 @@ export const Banner = () => {
   const redesSociales = [
     { href: "https://www.linkedin.com/in/max-winchez-rivera-3719a4237/", icon: <FaLinkedin />, alt: "LinkedIn" },
     { href: "https://github.com/", icon: <FaGithub />, alt: "GitHub" },
-    { href: "https://www.facebook.com/profile.php?id=100094055649759", icon: <FaFacebook />, alt: "Facebook" },
+    { href: "https://www.facebook.com/wr.max.404270", icon: <FaFacebook />, alt: "Facebook" },
   ];
 
   return (

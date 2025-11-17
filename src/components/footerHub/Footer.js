@@ -60,7 +60,7 @@ export const Footer = () => {
   const redesSociales = [
     { href: "https://www.linkedin.com/in/max-winchez-rivera-3719a4237/", src: navIcon1, alt: "LinkedIn" },
     { href: "https://github.com/", src: navIcon3, alt: "GitHub" },
-    { href: "https://www.facebook.com/profile.php?id=100094055649759", src: navIcon2, alt: "Facebook" },
+    { href: "https://www.facebook.com/wr.max.404270", src: navIcon2, alt: "Facebook" },
   ];
 
   const footerText = {
