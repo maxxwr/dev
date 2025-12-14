@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dev/static/css/main.1e602f95.css",
-    "main.js": "/dev/static/js/main.c831461b.js",
+    "main.js": "/dev/static/js/main.735ffafd.js",
     "static/js/206.b6e727ee.chunk.js": "/dev/static/js/206.b6e727ee.chunk.js",
     "static/media/datos.gif": "/dev/static/media/datos.d4a5daa4d174ebc034df.gif",
     "static/media/reco.gif": "/dev/static/media/reco.79685ca06e80c1e3e378.gif",
@@ -10,21 +10,21 @@
     "static/media/analisis.gif": "/dev/static/media/analisis.8930a25cb88e4cbe861e.gif",
     "static/media/color-sharp.png": "/dev/static/media/color-sharp.bea361cfef80fefc2d1e.png",
     "static/media/truenorosa.gif": "/dev/static/media/truenorosa.78d0603779cc5b48c557.gif",
-    "static/media/api-dniruc.jpg": "/dev/static/media/api-dniruc.ac156861fcf123167cb3.jpg",
+    "static/media/api-dniruc.jpg": "/dev/static/media/api-dniruc.e1b05425d36ebba22521.jpg",
     "static/media/phpconex.jpg": "/dev/static/media/phpconex.99770bc12fe14883a76c.jpg",
     "static/media/api-tcambio.jpg": "/dev/static/media/api-tcambio.4bbc4a74e32cf56df504.jpg",
-    "static/media/api-stripe.jpg": "/dev/static/media/api-stripe.496028c1c3fd3c727b67.jpg",
+    "static/media/api-stripe.jpg": "/dev/static/media/api-stripe.7cbc2833fedc4251100c.jpg",
     "static/media/contact-img1.png": "/dev/static/media/contact-img1.5e57cfa51da62b22c694.png",
     "static/media/api-chat.jpg": "/dev/static/media/api-chat.55aa8adf68e0420c7d4e.jpg",
     "static/media/banner-bg.png": "/dev/static/media/banner-bg.cc1273af450504afe755.png",
     "static/media/iber.jpeg": "/dev/static/media/iber.a8de8b5a6f6f1ce5546b.jpeg",
     "static/media/cv1.jpg": "/dev/static/media/cv1.bf1d9d9d2c6d749d4020.jpg",
     "static/media/pasarela1.jpg": "/dev/static/media/pasarela1.d3d75ec53a602b844297.jpg",
+    "static/media/angular.png": "/dev/static/media/angular.8d2d9b4d4cecd5974f2e.png",
     "static/media/gifcode.gif": "/dev/static/media/gifcode.9b63903693f4fb19cd48.gif",
     "static/media/react.png": "/dev/static/media/react.42a576061f708098cde1.png",
     "static/media/unity.jpeg": "/dev/static/media/unity.80e3cd04cbe0718a72ba.jpeg",
     "static/media/ruc-dni.jpg": "/dev/static/media/ruc-dni.5ad9129d87a52fa7bed9.jpg",
-    "static/media/c-char.png": "/dev/static/media/c-char.4f0bf253894bd8d6d3d3.png",
     "static/media/cv2.jpg": "/dev/static/media/cv2.1da7ce2984dbf5047f0d.jpg",
     "static/media/cv4.jpg": "/dev/static/media/cv4.62ae69f695d412c51905.jpg",
     "static/media/panel-invent1.jpeg": "/dev/static/media/panel-invent1.809542dee31b6ccb8cb7.jpeg",
@@ -33,12 +33,12 @@
     "static/media/CentraNo2-Bold.ttf": "/dev/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
     "static/media/CentraNo2-Medium.ttf": "/dev/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
     "static/media/CentraNo2-Book.ttf": "/dev/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
+    "static/media/mongodb.png": "/dev/static/media/mongodb.aec9aebe1e85b163477a.png",
     "static/media/app.jpg": "/dev/static/media/app.b3b70977b12bc7796a93.jpg",
     "static/media/gooo.png": "/dev/static/media/gooo.9ebda5daaff22bc09ab9.png",
     "static/media/apkmovile.jpeg": "/dev/static/media/apkmovile.7e2caf801e84eb6c8176.jpeg",
     "static/media/java.png": "/dev/static/media/java.40f8e82ccf40e6bd5fb0.png",
     "static/media/python.png": "/dev/static/media/python.7467522b9c915d17eadd.png",
-    "static/media/expresss.jpg": "/dev/static/media/expresss.b0c16c7d694b7422a5c9.jpg",
     "static/media/revicons.eot": "/dev/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/dev/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/dev/static/media/revicons.e8746a624ed098489406.woff",
@@ -49,6 +49,6 @@
   },
   "entrypoints": [
     "static/css/main.1e602f95.css",
-    "static/js/main.c831461b.js"
+    "static/js/main.735ffafd.js"
   ]
 }
