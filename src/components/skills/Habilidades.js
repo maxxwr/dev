@@ -4,10 +4,10 @@ import "react-multi-carousel/lib/styles.css";
 import meter1 from "../../assets/img/java.png";
 import meter2 from "../../assets/img/python.png";
 import meter3 from "../../assets/img/react.png";
-import meter4 from "../../assets/img/c-char.png";
-import meter5 from "../../assets/img/gooo.png";
-import meter6 from "../../assets/img/myql.png";
-import meter7 from "../../assets/img/expresss.jpg";
+import meter4 from "../../assets/img/angular.png";
+import meter5 from "../../assets/img/myql.png";
+import meter6 from "../../assets/img/mongodb.png";
+import meter7 from "../../assets/img/gooo.png";
 import colorSharp from "../../assets/img/color-sharp.png";
 import "../../color/skills/Habilidades.css";
 
@@ -59,10 +59,10 @@ export const Skills = () => {
     { img: meter1, alt: "Java", name: "JAVA" },
     { img: meter2, alt: "Python", name: "PYTHON" },
     { img: meter3, alt: "React", name: "REACT" },
-    { img: meter4, alt: "C#", name: "C-SHARP" },
-    { img: meter5, alt: "GO", name: "GO" },
-    { img: meter6, alt: "MySQL", name: "MYSQL" },
-    { img: meter7, alt: "Express.js", name: "JS" },
+    { img: meter4, alt: "Angular", name: "ANGULAR" },
+    { img: meter5, alt: "MySQL", name: "MYSQL" },
+    { img: meter6, alt: "Mongodb", name: "MONGODB" },
+    { img: meter7, alt: "GO", name: "GO" },
   ];
 
   return (

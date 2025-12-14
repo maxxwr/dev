@@ -142,7 +142,7 @@ export const Banner = () => {
               <button
                 className="vvd btn-contact"
                 onClick={() =>
-                  handleDownloadClick("https://drive.google.com/uc?export=download&id=1Xab_e2jyyZNUWWjUfvEOHVzK-hY6xbfr")
+                  handleDownloadClick("https://drive.google.com/uc?export=download&id=1dmqQzvT3MWW4GzxW3sNK2SBOklpv5yWX")
                 }
               >
                 {isDownloading ? (

@@ -162,9 +162,9 @@ export const Projects = () => {
   const frontendProjects = [
     {
       title: "Landing Page Responsive",
-      features: ["Este proyecto implementa lógica avanzada de responsive design y optimización SEO para garantizar máxima compatibilidad y visibilidad en buscadores."],
+      features: ["Este proyecto implementa una interfaz al consumo de servicios REST, validación de datos y visualización de información, con enfoque responsive y optimización SEO."],
       imgUrl: projImg4,
-      technologies: ["React", "Node", "CSS3", "JavaScript ES6"],
+      technologies: ["Angular", "TypeScript", "CSS3", "Node"],
       description: [
         "100% responsive",
         "Optimizada para SEO",
@@ -177,7 +177,7 @@ export const Projects = () => {
       title: "Web Dinámica",
       features: ["Este proyecto implementa un sistema completo de acceso con personalización avanzada y seguridad robusta."],
       imgUrl: projImg7,
-      technologies: ["React", "Node", "CSS3", "JavaScript ES6"],
+      technologies: ["React", "JavaScript ES6", "CSS3", "Node"],
       description: [
         "Conexión a base de datos",
         "Autenticación JWT para manejo de sesiones",
@@ -239,7 +239,7 @@ export const Projects = () => {
         "E-commerce con microservicios para tienda en línea con pagos seguros vía STRIPE."
       ],
       imgUrl: projImg2,
-      technologies: ["Node.js", "Express.js", "React", "MySQL", "JWT", "Stripe"],
+      technologies: ["Node.js", "Express.js", "React", "MongoDB", "JWT", "Stripe"],
       githubLink: "#"
     },
     {
@@ -406,7 +406,7 @@ export const Projects = () => {
     categories: [
       {
         title: "Frameworks & Libraries",
-        technologies: ["Spring Boot", "Express.js (Node.js)", ".NET Framework", "TensorFlow"]
+        technologies: ["Spring Boot", "Express (Node.js)", ".NET Framework", "TensorFlow"]
       },
       {
         title: "APIs & Integrations",
