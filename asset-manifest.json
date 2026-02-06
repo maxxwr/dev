@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dev/static/css/main.1e602f95.css",
-    "main.js": "/dev/static/js/main.735ffafd.js",
+    "main.js": "/dev/static/js/main.775e840f.js",
     "static/js/206.b6e727ee.chunk.js": "/dev/static/js/206.b6e727ee.chunk.js",
+    "static/media/cometa.gif": "/dev/static/media/cometa.f0ce3434f2fffd3eebea.gif",
     "static/media/datos.gif": "/dev/static/media/datos.d4a5daa4d174ebc034df.gif",
     "static/media/reco.gif": "/dev/static/media/reco.79685ca06e80c1e3e378.gif",
     "static/media/gatin.gif": "/dev/static/media/gatin.b4972b11be4395201fbe.gif",
     "static/media/AI.gif": "/dev/static/media/AI.d8baad821fc72302bbe5.gif",
     "static/media/analisis.gif": "/dev/static/media/analisis.8930a25cb88e4cbe861e.gif",
     "static/media/color-sharp.png": "/dev/static/media/color-sharp.bea361cfef80fefc2d1e.png",
-    "static/media/truenorosa.gif": "/dev/static/media/truenorosa.78d0603779cc5b48c557.gif",
     "static/media/api-dniruc.jpg": "/dev/static/media/api-dniruc.e1b05425d36ebba22521.jpg",
     "static/media/phpconex.jpg": "/dev/static/media/phpconex.99770bc12fe14883a76c.jpg",
     "static/media/api-tcambio.jpg": "/dev/static/media/api-tcambio.4bbc4a74e32cf56df504.jpg",
@@ -49,6 +49,6 @@
   },
   "entrypoints": [
     "static/css/main.1e602f95.css",
-    "static/js/main.735ffafd.js"
+    "static/js/main.775e840f.js"
   ]
 }
