@@ -1,5 +1,5 @@
 //import React from "react";
-import truenorosa from "../../assets/img/truenorosa.gif";
+import truenorosa from "../../assets/img/cometa.gif";
 import { BackgroundAnimation } from "./animation";
 
 export const FondoTrueno = () => {
