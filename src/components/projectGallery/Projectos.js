@@ -57,8 +57,8 @@ const BackendRevealItem = ({ children, delay = 0 }) => {
 
 const FrontendRevealItem = ({ children, delay = 0 }) => {
   const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
+    triggerOnce: false, 
+    threshold: 0.2,     
   });
 
   return (
@@ -66,32 +66,37 @@ const FrontendRevealItem = ({ children, delay = 0 }) => {
       ref={ref}
       initial={{
         opacity: 0,
-        rotateY: 90,
-        scale: 0.8
+        y: 50,
+        scale: 0.95,
+        filter: "blur(6px)",
       }}
-      animate={inView ? {
-        opacity: 1,
-        rotateY: 0,
-        scale: 1,
-        transition: {
-          duration: 0.8,
-          delay,
-          ease: "easeOut"
-        }
-      } : {
-        opacity: 0,
-        rotateY: 90,
-        scale: 0.8
-      }}
-      style={{
-        width: "100%",
-        transformStyle: "preserve-3d"
-      }}
+      animate={
+        inView
+          ? {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              filter: "blur(0px)",
+              transition: {
+                duration: 0.6,
+                delay,
+                ease: "easeOut",
+              },
+            }
+          : {
+              opacity: 0,
+              y: 50,
+              scale: 0.95,
+              filter: "blur(6px)",
+            }
+      }
+      style={{ width: "100%" }}
     >
       {children}
     </motion.div>
   );
 };
+
 
 const AIRevealItem = ({ children, delay = 0 }) => {
   const [ref, inView] = useInView({

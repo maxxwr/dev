@@ -8,46 +8,61 @@ export const BackgroundAnimation = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    const isMobile = window.innerWidth < 768;
-    const numParticles = isMobile ? 20 : 150;
+    let particles = [];
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const setupCanvas = () => {
+      const dpr = window.devicePixelRatio || 1;
 
-    const particles = [];
-    for (let i = 0; i < numParticles; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 0.7 + 0.5,
-        speedY: Math.random() * 2 + 3, 
-      });
-    }
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
 
-    function animate() {
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      const isMobile = window.innerWidth < 768;
+      const numParticles = isMobile ? 20 : 150;
+
+      particles = [];
+      for (let i = 0; i < numParticles; i++) {
+        particles.push({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          radius: Math.random() * 0.6 + 0.3,
+          speedY: Math.random() * 2 + 3,
+        });
+      }
+    };
+
+    setupCanvas();
+
+    const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = "white";
 
-      particles.forEach((particle) => {
+      particles.forEach((p) => {
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fill();
 
-        particle.y += particle.speedY;
+        p.y += p.speedY;
 
-        if (particle.y > canvas.height) {
-          particle.y = 0;
-          particle.x = Math.random() * canvas.width;
+        if (p.y > window.innerHeight) {
+          p.y = 0;
+          p.x = Math.random() * window.innerWidth;
         }
       });
 
       animationRef.current = requestAnimationFrame(animate);
-    }
+    };
 
-    animationRef.current = requestAnimationFrame(animate);
+    animate();
+
+    window.addEventListener("resize", setupCanvas);
 
     return () => {
       cancelAnimationFrame(animationRef.current);
+      window.removeEventListener("resize", setupCanvas);
     };
   }, []);
 
@@ -55,16 +70,17 @@ export const BackgroundAnimation = () => {
     <canvas
       ref={canvasRef}
       style={{
-        position: "absolute",
+        position: "fixed",
         top: 0,
         left: 0,
         width: "100%",
         height: "100%",
         zIndex: 0,
-        backgroundColor: "transparent",
         pointerEvents: "none",
       }}
     />
   );
 };
+
+
 
