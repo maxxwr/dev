@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/dev/static/css/main.1e602f95.css",
-    "main.js": "/dev/static/js/main.775e840f.js",
+    "main.css": "/dev/static/css/main.551efe52.css",
+    "main.js": "/dev/static/js/main.f318c962.js",
     "static/js/206.b6e727ee.chunk.js": "/dev/static/js/206.b6e727ee.chunk.js",
     "static/media/cometa.gif": "/dev/static/media/cometa.f0ce3434f2fffd3eebea.gif",
     "static/media/datos.gif": "/dev/static/media/datos.d4a5daa4d174ebc034df.gif",
+    "static/media/elmo1.gif": "/dev/static/media/elmo1.cdbf9157a7aa1f2f7ab4.gif",
     "static/media/reco.gif": "/dev/static/media/reco.79685ca06e80c1e3e378.gif",
     "static/media/gatin.gif": "/dev/static/media/gatin.b4972b11be4395201fbe.gif",
     "static/media/AI.gif": "/dev/static/media/AI.d8baad821fc72302bbe5.gif",
@@ -21,7 +22,6 @@
     "static/media/cv1.jpg": "/dev/static/media/cv1.bf1d9d9d2c6d749d4020.jpg",
     "static/media/pasarela1.jpg": "/dev/static/media/pasarela1.d3d75ec53a602b844297.jpg",
     "static/media/angular.png": "/dev/static/media/angular.8d2d9b4d4cecd5974f2e.png",
-    "static/media/gifcode.gif": "/dev/static/media/gifcode.9b63903693f4fb19cd48.gif",
     "static/media/react.png": "/dev/static/media/react.42a576061f708098cde1.png",
     "static/media/unity.jpeg": "/dev/static/media/unity.80e3cd04cbe0718a72ba.jpeg",
     "static/media/ruc-dni.jpg": "/dev/static/media/ruc-dni.5ad9129d87a52fa7bed9.jpg",
@@ -48,7 +48,7 @@
     "static/media/nav-icon2.svg": "/dev/static/media/nav-icon2.a39f0e5e47e442dafcc5c9c320f19f6f.svg"
   },
   "entrypoints": [
-    "static/css/main.1e602f95.css",
-    "static/js/main.775e840f.js"
+    "static/css/main.551efe52.css",
+    "static/js/main.f318c962.js"
   ]
 }
