@@ -179,6 +179,12 @@
   letter-spacing: 2px;
 }
 
+.location-icon-vertical {
+  font-size: 0.9rem;
+  transform: translateX(-4px);
+  margin-bottom: 10px;
+}
+
 .social-icons {
   display: flex;
   flex-direction: column;

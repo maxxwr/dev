@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { FaLinkedin, FaGithub, FaFacebook, FaEnvelope, FaPhone, FaFileDownload, FaCheckCircle } from "react-icons/fa";
+import { FaLinkedin, FaFacebook, FaEnvelope, FaFileDownload, FaCheckCircle, FaGlobe, FaWhatsapp } from "react-icons/fa";
+// import { FaGithub, FaPhone } from "react-icons/fa";
 import { CertificatesModal } from "../Modal/CertificatesModal";
 import headerImg from "../../assets/img/gatin.gif";
 import "aos/dist/aos.css";
@@ -34,7 +35,7 @@ export const Banner = () => {
   const infoPersonal = {
     name: "Max Winchez",
     email: "maxwinchez@gmail.com",
-    phone: "+(51) 910 339 920",
+    //phone: "+(51) 910 339 920",
     title: "Hola, soy Max Winchez",
     description: "Desarrollo backend, frontend e integración de soluciones con DL & ML.",
     phrase: "Transformando ideas en realidad",
@@ -42,7 +43,8 @@ export const Banner = () => {
       default: "Descargar CV",
       completed: "Descarga Completada",
     },
-    socialText: "Follow Me",
+    //socialText: "Follow Me",
+    location: "Lima, Perú",
     certificatesText: "Ver Logros",
   };
 
@@ -118,7 +120,7 @@ export const Banner = () => {
 
   const redesSociales = [
     { href: "https://www.linkedin.com/in/max-winchez-rivera-3719a4237/", icon: <FaLinkedin />, alt: "LinkedIn" },
-    { href: "https://github.com/", icon: <FaGithub />, alt: "GitHub" },
+    { href: "https://wa.me/51910339920?text=Hola%20Max", icon: <FaWhatsapp />, alt: "WhatsApp" },
     { href: "https://www.facebook.com/wr.max.404270", icon: <FaFacebook />, alt: "Facebook" },
   ];
 
@@ -135,9 +137,11 @@ export const Banner = () => {
               <p>
                 <FaEnvelope className="icon" /> {infoPersonal.email}
               </p>
+              {/*
               <p>
                 <FaPhone className="icon" /> {infoPersonal.phone}
               </p>
+              */}
 
               <button
                 className="vvd btn-contact"
@@ -179,7 +183,7 @@ export const Banner = () => {
       </Container>
 
       <div className="social-links">
-        <div className="follow-text">{infoPersonal.socialText}</div>
+        <div className="follow-text"><FaGlobe className="location-icon-vertical" />{infoPersonal.location}</div>
         <div className="social-icons">
           {redesSociales.map((red, index) => (
             <a key={index} href={red.href} target="_blank" rel="noreferrer" className="social-icon" aria-label={red.alt}>
