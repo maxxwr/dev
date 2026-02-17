@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dev/static/css/main.551efe52.css",
-    "main.js": "/dev/static/js/main.f318c962.js",
+    "main.css": "/dev/static/css/main.615f52d6.css",
+    "main.js": "/dev/static/js/main.3ebe0b85.js",
     "static/js/206.b6e727ee.chunk.js": "/dev/static/js/206.b6e727ee.chunk.js",
     "static/media/cometa.gif": "/dev/static/media/cometa.f0ce3434f2fffd3eebea.gif",
     "static/media/datos.gif": "/dev/static/media/datos.d4a5daa4d174ebc034df.gif",
@@ -48,7 +48,7 @@
     "static/media/nav-icon2.svg": "/dev/static/media/nav-icon2.a39f0e5e47e442dafcc5c9c320f19f6f.svg"
   },
   "entrypoints": [
-    "static/css/main.551efe52.css",
-    "static/js/main.f318c962.js"
+    "static/css/main.615f52d6.css",
+    "static/js/main.3ebe0b85.js"
   ]
 }
