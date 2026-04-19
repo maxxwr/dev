@@ -745,6 +745,7 @@
     backdrop-filter: none !important;
     /* <-ES X ESO PARA K NO SE AGA LAG */
     -webkit-backdrop-filter: none !important;
+    z-index: 10005 !important;
   }
 
   .certificates-modal .modal-content {

@@ -1,0 +1,348 @@
+/* ==========================================================================
+   1. CONTENEDOR PRINCIPAL
+   ========================================================================== */
+.asistente-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ==========================================================================
+   2. GLOBO DE SALUDO (Borde Fino + Brillo Potente)
+   ========================================================================== */
+.globo-saludo {
+    position: relative;
+    margin-bottom: 12px;
+    background: linear-gradient(90.21deg, #4820f7 -5.91%, #7e1717 111.58%);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 18px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.9); 
+}
+
+/* ⚪ ESTE HACE EL "BORDE" BLANCO DE LA FLECHA */
+.globo-saludo::after {
+    content: '';
+    position: absolute;
+    bottom: -9px; 
+    right: 25px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    /* Color blanco para que sea el borde */
+    border-top: 8px solid rgba(255, 255, 255, 0.9); 
+    z-index: 1;
+}
+
+/* 🍷 ESTE HACE EL "RELLENO" VINO DE LA FLECHA (Encima del blanco) */
+.globo-saludo::before {
+    content: '';
+    position: absolute;
+    bottom: -7.2px; /* Un pelín más arriba para que se vea el borde blanco abajo */
+    right: 26px; /* Centrado */
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    /* Color vino para el relleno */
+    border-top: 7px solid #7e1717; 
+    z-index: 2; /* Importante: z-index mayor para estar arriba */
+}
+
+.globo-saludo.visible { opacity: 1; transform: translateY(0); visibility: visible; }
+.globo-saludo.oculto { opacity: 0; transform: translateY(15px); visibility: hidden; }
+
+/* ==========================================================================
+   3. BOTÓN FLOTANTE (Solo el GIF flotando)
+   ========================================================================== */
+.boton-flotante {
+    width: 80px;
+    height: 80px;
+    background: transparent !important; /* Forzamos transparencia */
+    background-color: transparent !important;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Quita el recuadro azul en móviles */
+    -webkit-tap-highlight-color: transparent; 
+}
+
+.boton-flotante:hover { 
+    transform: scale(1.15) rotate(5deg);
+    background: transparent !important;
+}
+
+.gif-robot {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(72, 32, 247, 0.5));
+    mix-blend-mode: screen; 
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Para que el icono de cerrar ocupe buen espacio y brille */
+.boton-flotante svg {
+    width: 45px !important;  /* ¡Aquí le damos el tamaño real! */
+    height: 45px !important;
+    color: #f55f85 !important;
+    filter: drop-shadow(0 0 10px #7e1717); /* Ese brillo rojo que te encanta */
+    transition: all 0.3s ease;
+}
+
+.boton-flotante:hover svg {
+    transform: rotate(90deg) scale(1.1); /* Efecto pro al pasar el mouse */
+}
+
+/* ==========================================================================
+   4. CUADRO DEL CHAT (Glassmorphism + Gradiente)
+   ========================================================================== */
+.contenedor-asistente {
+    position: absolute;
+    bottom: 85px; 
+    right: 0;
+    width: 360px;
+    height: 520px;
+    background: rgba(10, 10, 10, 0.6); 
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    /* Borde con el color principal */
+    border: 1px solid rgba(72, 32, 247, 0.2);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(72, 32, 247, 0.05);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: aparecer 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: bottom right;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.8) translateY(30px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.cabecera-chat {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(5px);
+    padding: 18px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: #f55f85;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ==========================================================================
+   5. ÁREA DE MENSAJES
+   ========================================================================== */
+.caja-chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.05);
+    scrollbar-width: none;
+}
+
+.caja-chat::-webkit-scrollbar { display: none; }
+
+.burbuja {
+    padding: 12px 18px;
+    border-radius: 20px;
+    max-width: 85%;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.user { 
+    background: linear-gradient(90.21deg, #4820f7 -5.91%, #7e1717 111.58%);
+    align-self: flex-end; 
+    color: white;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 4px 12px rgba(72, 32, 247, 0.2);
+}
+
+.bot { 
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(5px);
+    align-self: flex-start; 
+    color: #e0e0e0; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom-left-radius: 4px;
+}
+
+/* ==========================================================================
+   6. ENTRADA DE TEXTO
+   ========================================================================== */
+.entrada-chat {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center; 
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.entrada-chat input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 12px 16px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.entrada-chat input:focus {
+    border-color: #4820f7;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* Mantenemos tu botón igual, solo agregamos position relative */
+.entrada-chat button {
+    background: linear-gradient(90.21deg, #4820f7 -5.91%, #7e1717 111.58%);
+    border: none;
+    color: white;
+    width: 44px; 
+    height: 44px;
+    border-radius: 14px;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important; 
+    transition: all 0.3s;
+    position: relative; /* <--- IMPORTANTE para que la chispa flote */
+}
+
+/* Ajuste para los dos iconos */
+.entrada-chat button svg.icono-flecha {
+    width: 18px !important;  /* Un poquito más grande la flecha */
+    height: 18px !important;
+    transform: translateX(-2px); /* La movemos un pelín a la izquierda */
+}
+
+.entrada-chat button svg.icono-chispa-mini {
+    width: 10px !important;  /* Mantenemos el tamaño pequeñito */
+    height: 10px !important;
+    position: absolute;      /* Sigue flotando */
+    bottom: 8px !important;  /* <--- Cambié 'top' por 'bottom' para que baje */
+    right: 14px !important;   /* Lo mantenemos a la derecha */
+    color: #fff;
+    filter: drop-shadow(0 0 3px white); /* Sigue brillando */
+    transition: all 0.3s ease;
+}
+
+/* Tu efecto de hover mejorado para los dos */
+.entrada-chat button:hover svg.icono-flecha {
+    transform: scale(1.1) rotate(-5deg) translateX(-2px);
+}
+
+.escribiendo {
+    font-style: italic;
+    font-size: 12px;
+    color: #00d4ff;
+    padding: 10px;
+    animation: pulsar 1.5s infinite;
+}
+
+@keyframes pulsar {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+
+.img-generada {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: block;
+    border: 1px solid #5722ff; /* Color moradito tecnológico */
+}
+
+.img-container-bot {
+    padding: 5px 0;
+}
+
+.contenedor-sugerencias {
+    display: grid; /* Usamos Grid para el orden perfecto */
+    grid-template-columns: 1fr 1fr; /* ¡Aquí está! Dos columnas iguales */
+    gap: 10px;
+    padding: 15px 10px;
+    animation: fadeIn 0.6s ease;
+}
+
+.btn-sugerencia {
+    background: rgba(87, 34, 255, 0.08);
+    border: 1px solid rgba(87, 34, 255, 0.3);
+    color: #fff;
+    padding: 10px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem; /* Un poquito más chico para que entre bien */
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-sugerencia:hover {
+    background: #5722ff;
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(87, 34, 255, 0.4);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE MÓVIL (Mantenemos la posición alta que te gustó)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .asistente-wrapper {
+        right: 15px;
+        bottom: 60px; 
+        z-index: 9999; 
+    }
+    
+    .contenedor-asistente {
+        width: 90vw;
+        height: 60vh;
+        bottom: 80px;
+    }
+
+    /* ✨ ESTO ES LO QUE FALTA PARA EL GIF ✨ */
+    .boton-flotante {
+        width: 75px;  /* Antes era 80px, lo bajamos a 65px para que sea más sutil */
+        height: 75px;
+    }
+
+    .gif-robot {
+        width: 100%;
+        height: 100%;
+    }
+}

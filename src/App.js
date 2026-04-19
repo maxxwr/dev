@@ -11,6 +11,7 @@ import { Contact } from "./components/messageHub/Contacto";
 import { Footer } from "./components/footerHub/Footer";
 import { BottomNav } from "./components/navPanel/BottomNav";
 import { FondoTrueno } from "./components/fxHub/trueno";
+import { Asistente } from "./components/chat/asistente";
 
 export const App = () => {
   useEffect(() => {
@@ -49,6 +50,7 @@ export const App = () => {
         <Footer />
         <BottomNav />
         <FondoTrueno />
+        <Asistente />
       </div>
     </Router>
   );

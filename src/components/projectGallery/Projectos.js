@@ -333,6 +333,7 @@ export const Projects = () => {
         "Integración con Flask para comunicación web.",
       ],
       githubLink: "#",
+      link: "https://inmobiliario-ia.vercel.app/",
     },
     {
       title: "Sistema de Recomendación",
