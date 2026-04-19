@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/dev/static/css/main.615f52d6.css",
-    "main.js": "/dev/static/js/main.3ebe0b85.js",
+    "main.css": "/dev/static/css/main.7d9386ed.css",
+    "main.js": "/dev/static/js/main.162ef136.js",
     "static/js/206.b6e727ee.chunk.js": "/dev/static/js/206.b6e727ee.chunk.js",
+    "static/media/robot.gif": "/dev/static/media/robot.c98e5aba69e06cf501f7.gif",
     "static/media/cometa.gif": "/dev/static/media/cometa.f0ce3434f2fffd3eebea.gif",
     "static/media/datos.gif": "/dev/static/media/datos.d4a5daa4d174ebc034df.gif",
     "static/media/elmo1.gif": "/dev/static/media/elmo1.cdbf9157a7aa1f2f7ab4.gif",
@@ -48,7 +49,7 @@
     "static/media/nav-icon2.svg": "/dev/static/media/nav-icon2.a39f0e5e47e442dafcc5c9c320f19f6f.svg"
   },
   "entrypoints": [
-    "static/css/main.615f52d6.css",
-    "static/js/main.3ebe0b85.js"
+    "static/css/main.7d9386ed.css",
+    "static/js/main.162ef136.js"
   ]
 }
